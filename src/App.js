@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from "react";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import styled from "@emotion/styled";
+import { useState, useEffect } from "react";
 import GalleryGrid from "./components/GalleryGrid";
 import GridForm from "./components/GridForm";
 import Alert from "./components/Alert";
+import Appbar from "./components/Appbar";
 
 function App() {
 	const [layout, setLayout] = useState([
@@ -22,8 +27,12 @@ function App() {
 	useEffect(() => {
 		const newLayout = [...layout];
 		newLayout.forEach((item) => {
-			if (item.x >= cols) {
+			/* if (item.x >= cols) {
 				item.x = cols - 1;
+			} */
+			if (item.x + item.w > cols) {
+				item.x -= 1;
+				item.y += 1;
 			}
 		});
 		setLayout(newLayout);
@@ -58,41 +67,51 @@ function App() {
 	};
 
 	return (
-		<main style={containerStyle}>
-			<GalleryGrid
-				layout={layout}
-				imageNumber={imageNumber}
-				cols={cols}
-				imageHeight={imageHeight}
-				onLayoutChange={handleLayoutChange}
-				removeItem={removeItem}
-			/>
-			<GridForm
-				layout={layout}
-				imageNumber={imageNumber}
-				cols={cols}
-				imageHeight={imageHeight}
-				onAddImage={addItem}
-				onChangeCols={(newCols) => setCols(newCols)}
-				onChangeImageHeight={(newHeight) => setImageHeight(newHeight)}
-				onCopyText={(msg) => {
-					setAlertMessage(msg);
-				}}
-			/>
-			<Alert message={alertMessage} duration={2500} />
-		</main>
+		<Wrapper>
+			<Appbar />
+			<main style={containerStyle}>
+				<GalleryGrid
+					layout={layout}
+					imageNumber={imageNumber}
+					cols={cols}
+					imageHeight={imageHeight}
+					onLayoutChange={handleLayoutChange}
+					removeItem={removeItem}
+				/>
+				<GridForm
+					layout={layout}
+					imageNumber={imageNumber}
+					cols={cols}
+					imageHeight={imageHeight}
+					onAddImage={addItem}
+					onChangeCols={(newCols) => setCols(newCols)}
+					onChangeImageHeight={(newHeight) => setImageHeight(newHeight)}
+					onCopyText={(msg) => {
+						setAlertMessage(msg);
+					}}
+				/>
+				<Alert message={alertMessage} duration={2500} />
+			</main>
+		</Wrapper>
 	);
 }
 
+const Wrapper = styled.div`
+	display: grid;
+	grid-template-columns: 1fr;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+`;
+
 const containerStyle = {
-	position: "relative",
 	display: "grid",
-	gridTemplateColumns: "1fr 1fr",
-	gridGap: "20px",
+	gridTemplateColumns: "2fr 1fr",
+	gridGap: "40px",
 	gridAutoRows: "100%",
 	width: "100%",
-	height: "100vh",
-	padding: "40px",
+	padding: "10px 40px 20px",
+	overflow: "hidden",
 };
 
 export default App;

@@ -7,15 +7,16 @@ const CSSBox = ({ layout, onCopyText }) => {
 	const layoutToCSS = () => {
 		let cssString = `.grid-gallery {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 10px;
+  grid-auto-rows: 100px;
 }
 `;
 
 		layout.forEach((item, index) => {
 			cssString += `
-.grid-gallery:nth-child(${index + 1}) {
+.grid-gallery img:nth-child(${index + 1}) {
   grid-column: ${item.x + 1} / span ${item.w};
-  grid-column: ${item.y + 1} / span ${item.h};
+  grid-row: ${item.y + 1} / span ${item.h};
 }
 `;
 		});
@@ -40,7 +41,7 @@ const CSSBox = ({ layout, onCopyText }) => {
 	return (
 		<Container>
 			<Header>
-				<p style={{ fontWeight: "600" }}>CSS</p>
+				<p style={{ fontWeight: "900" }}>CSS</p>
 				<CopyButton
 					onClick={(e) => {
 						e.preventDefault();
@@ -68,13 +69,13 @@ const Header = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 10px;
-	padding-left: 20px;
+	padding-left: 15px;
 `;
 
 const Pre = styled.pre`
 	display: inline-block;
 	padding: 15px;
-	background-color: #eee;
+	background-color: #fff;
 	overflow: auto;
 	border-radius: 10px;
 `;

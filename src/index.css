@@ -5,7 +5,8 @@
 }
 
 body {
-	font-family: "Poppins", sans-serif;
+	font-family: "Nunito", sans-serif;
+	background-color: #f4f4f4;
 }
 
 .react-grid-item.react-grid-placeholder {

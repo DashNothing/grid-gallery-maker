@@ -38,7 +38,7 @@ const HTMLBox = ({ layout, onCopyText }) => {
 	return (
 		<Container>
 			<Header>
-				<p style={{ fontWeight: "600" }}>HTML</p>
+				<p style={{ fontWeight: "900" }}>HTML</p>
 				<CopyButton
 					onClick={(e) => {
 						e.preventDefault();
@@ -68,13 +68,13 @@ const Header = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 10px;
-	padding-left: 20px;
+	padding-left: 15px;
 `;
 
 const Pre = styled.pre`
 	display: inline-block;
 	padding: 15px;
-	background-color: #eee;
+	background-color: #fff;
 	overflow: auto;
 	border-radius: 10px;
 `;
