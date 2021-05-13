@@ -3,12 +3,13 @@
 import { jsx } from "@emotion/react";
 import styled from "@emotion/styled";
 
-const CSSBox = ({ layout, onCopyText }) => {
+const CSSBox = ({ layout, onCopyText, gridWidthPercentage, imageHeight }) => {
 	const layoutToCSS = () => {
 		let cssString = `.grid-gallery {
   display: grid;
   grid-gap: 10px;
-  grid-auto-rows: 100px;
+  grid-auto-rows: ${imageHeight}px;
+  width: ${gridWidthPercentage}%;
 }
 `;
 
@@ -43,6 +44,7 @@ const CSSBox = ({ layout, onCopyText }) => {
 			<Header>
 				<p style={{ fontWeight: "900" }}>CSS</p>
 				<CopyButton
+					type="button"
 					onClick={(e) => {
 						e.preventDefault();
 						copyToClipboard();

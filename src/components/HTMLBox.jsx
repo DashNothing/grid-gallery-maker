@@ -40,6 +40,7 @@ const HTMLBox = ({ layout, onCopyText }) => {
 			<Header>
 				<p style={{ fontWeight: "900" }}>HTML</p>
 				<CopyButton
+					type="button"
 					onClick={(e) => {
 						e.preventDefault();
 						copyToClipboard();

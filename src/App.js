@@ -20,6 +20,7 @@ function App() {
 	const [newCounter, setNewCounter] = useState(0);
 	const [imageNumber, setImageNumber] = useState(6);
 	const [cols, setCols] = useState(3);
+	const [gridWidthPercentage, setGridWidthPercentage] = useState(100);
 	const [imageHeight, setImageHeight] = useState(150);
 
 	const [alertMessage, setAlertMessage] = useState("");
@@ -74,6 +75,7 @@ function App() {
 					layout={layout}
 					imageNumber={imageNumber}
 					cols={cols}
+					gridWidthPercentage={gridWidthPercentage}
 					imageHeight={imageHeight}
 					onLayoutChange={handleLayoutChange}
 					removeItem={removeItem}
@@ -82,10 +84,19 @@ function App() {
 					layout={layout}
 					imageNumber={imageNumber}
 					cols={cols}
+					gridWidthPercentage={gridWidthPercentage}
 					imageHeight={imageHeight}
 					onAddImage={addItem}
 					onChangeCols={(newCols) => setCols(newCols)}
-					onChangeImageHeight={(newHeight) => setImageHeight(newHeight)}
+					onChangeGridWidth={(newGridWidth) => {
+						if (newGridWidth < 1) newGridWidth = 1;
+						else if (newGridWidth > 100) newGridWidth = 100;
+						setGridWidthPercentage(newGridWidth);
+					}}
+					onChangeImageHeight={(newHeight) => {
+						if (newHeight < 50) newHeight = 50;
+						setImageHeight(newHeight);
+					}}
 					onCopyText={(msg) => {
 						setAlertMessage(msg);
 					}}

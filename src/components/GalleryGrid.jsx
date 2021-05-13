@@ -15,6 +15,7 @@ const Grid = WidthProvider(GridLayout);
 const GalleryGrid = ({
 	layout,
 	cols,
+	gridWidthPercentage,
 	imageHeight,
 	onLayoutChange,
 	removeItem,
@@ -25,12 +26,14 @@ const GalleryGrid = ({
 
 	useEffect(() => {
 		let newGridRowHeight = gridRef.current
-			? gridRef.current.offsetHeight / cols
+			? ((window.innerWidth / gridRef.current.offsetWidth / cols) *
+					imageHeight) /
+			  (gridWidthPercentage / 100)
 			: 20;
 		setGridRowHeight(newGridRowHeight);
 		console.log("Changed");
 		console.log(gridRef.current.offsetHeight);
-	}, [gridRef.current, cols]);
+	}, [gridRef.current, cols, imageHeight, gridWidthPercentage]);
 
 	const gridItems = layout.map((item, index) => (
 		<GridItem
@@ -67,7 +70,7 @@ const GalleryGrid = ({
 				onLayoutChange={(currentLayout) => {
 					onLayoutChange(currentLayout);
 				}}
-				margin={[15, 15]}
+				margin={[10, 10]}
 				containerPadding={[0, 0]}
 				resizeHandles={["s", "e"]}
 			>
