@@ -51,7 +51,7 @@ const GridForm = ({
 				+ Add image
 			</AddButton>
 
-			<div className="inputGroup">
+			<InputGroup tooltip={"Between 2 and 12"}>
 				<label htmlFor="cols">How many columns?</label>
 				<input
 					type="number"
@@ -71,9 +71,9 @@ const GridForm = ({
 						onChangeCols(tempCols);
 					}}
 				/>
-			</div>
+			</InputGroup>
 
-			<div className="inputGroup">
+			<InputGroup>
 				<label htmlFor="gridWidth">Grid width % (1 - 100)</label>
 				<input
 					type="number"
@@ -97,9 +97,9 @@ const GridForm = ({
 						onChangeGridWidth(tempWidthPercentage);
 					}}
 				/>
-			</div>
+			</InputGroup>
 
-			<div className="inputGroup">
+			<InputGroup>
 				<label htmlFor="imageHeight">Image height (px)</label>
 				<input
 					type="number"
@@ -118,7 +118,7 @@ const GridForm = ({
 						onChangeImageHeight(tempImageHeight);
 					}}
 				/>
-			</div>
+			</InputGroup>
 
 			<CodeContainer>
 				<HTMLBox
@@ -146,14 +146,6 @@ const Form = styled.div`
 	row-gap: 20px;
 	font-weight: 600;
 
-	.inputGroup {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		column-gap: 15px;
-	}
-
 	input {
 		padding: 5px;
 		font-size: 1rem;
@@ -163,13 +155,42 @@ const Form = styled.div`
 
 	input:focus {
 		outline: none;
-		border-color: #ff7d9a;
+		border-color: #ff7abc;
+	}
+`;
+
+const InputGroup = styled.div`
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	column-gap: 15px;
+
+	:hover {
+		::before {
+			opacity: 1;
+		}
+	}
+
+	::before {
+		content: ${(props) => props.tooltip};
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		top: -10px;
+		transform: translateY(-100%);
+		padding: 10px 20px;
+		background-color: #fff;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		z-index: 5;
 	}
 `;
 
 const AddButton = styled.button`
 	padding: 10px 35px;
-	background-color: #ff7d9a;
+	background-color: #ff7abc;
 	color: #fff;
 	font-weight: 600;
 	font-size: 1rem;

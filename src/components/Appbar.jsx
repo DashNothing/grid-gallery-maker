@@ -17,6 +17,7 @@ const Appbar = () => {
 
 const Header = styled.header`
 	text-align: center;
+	height: fit-content;
 
 	img {
 		display: inline-block;

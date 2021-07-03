@@ -73,6 +73,7 @@ const GalleryGrid = ({
 				margin={[10, 10]}
 				containerPadding={[0, 0]}
 				resizeHandles={["s", "e"]}
+				useCSSTransforms={false}
 			>
 				{gridItems}
 			</Grid>
@@ -114,7 +115,7 @@ const gridStyle = css`
 const GridItem = styled.div`
 	display: grid;
 	place-items: center;
-	background-color: #ffd384;
+	background-color: #40caee;
 
 	img {
 		display: block;
@@ -129,7 +130,7 @@ const GridItem = styled.div`
 	}
 
 	span {
-		color: #fff9b0;
+		color: #f4f4f4;
 		font-weight: 900;
 		font-size: 2.4rem;
 		user-select: none;

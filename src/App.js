@@ -120,6 +120,7 @@ const containerStyle = {
 	gridTemplateColumns: "2fr 1fr",
 	gridGap: "40px",
 	gridAutoRows: "100%",
+	justifyContent: "center",
 	width: "100%",
 	padding: "10px 40px 20px",
 	overflow: "hidden",

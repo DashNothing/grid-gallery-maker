@@ -28,7 +28,7 @@ const Alert = ({ message, duration }) => {
 		//bottom: 100px;
 		transform: translate(-50%, 100%);
 		padding: 8px 35px;
-		background-color: #ff7d9a;
+		background-color: #ff7abc;
 		color: #fff;
 		border-radius: 100px;
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);

@@ -10,11 +10,13 @@ body {
 }
 
 .react-grid-item.react-grid-placeholder {
-	background: #ffab73 !important;
+	background: #23e5e7 !important;
+	opacity: 0.8 !important;
 }
 
 .react-grid-item.react-draggable-dragging {
 	box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+	transform: rotate(2deg) !important;
 }
 
 button {
