@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/mosaic-gallery-maker/static/css/main.41d9eaa8.chunk.css",
+    "main.js": "/mosaic-gallery-maker/static/js/main.21878986.chunk.js",
+    "main.js.map": "/mosaic-gallery-maker/static/js/main.21878986.chunk.js.map",
+    "runtime-main.js": "/mosaic-gallery-maker/static/js/runtime-main.4ec27834.js",
+    "runtime-main.js.map": "/mosaic-gallery-maker/static/js/runtime-main.4ec27834.js.map",
+    "static/css/2.e7793417.chunk.css": "/mosaic-gallery-maker/static/css/2.e7793417.chunk.css",
+    "static/js/2.8692c96c.chunk.js": "/mosaic-gallery-maker/static/js/2.8692c96c.chunk.js",
+    "static/js/2.8692c96c.chunk.js.map": "/mosaic-gallery-maker/static/js/2.8692c96c.chunk.js.map",
+    "index.html": "/mosaic-gallery-maker/index.html",
+    "static/css/2.e7793417.chunk.css.map": "/mosaic-gallery-maker/static/css/2.e7793417.chunk.css.map",
+    "static/css/main.41d9eaa8.chunk.css.map": "/mosaic-gallery-maker/static/css/main.41d9eaa8.chunk.css.map",
+    "static/js/2.8692c96c.chunk.js.LICENSE.txt": "/mosaic-gallery-maker/static/js/2.8692c96c.chunk.js.LICENSE.txt",
+    "static/media/close.5b8ae0fa.svg": "/mosaic-gallery-maker/static/media/close.5b8ae0fa.svg",
+    "static/media/logo.11c0104e.svg": "/mosaic-gallery-maker/static/media/logo.11c0104e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4ec27834.js",
+    "static/css/2.e7793417.chunk.css",
+    "static/js/2.8692c96c.chunk.js",
+    "static/css/main.41d9eaa8.chunk.css",
+    "static/js/main.21878986.chunk.js"
+  ]
+}
