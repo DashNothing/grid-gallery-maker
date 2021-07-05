@@ -24,3 +24,7 @@ Run `npm start` to run the application locally.
 - Easily add and remove images from the gallery
 - Adjustable column count, gallery width and image height
 - View and copy generated HTML and CSS
+
+---
+
+&copy; Toni Stokić 2021
