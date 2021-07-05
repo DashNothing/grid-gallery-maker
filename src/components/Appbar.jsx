@@ -8,7 +8,7 @@ import logo from "../images/logo.svg";
 const Appbar = () => {
 	return (
 		<Header>
-			<a href="/">
+			<a href="#">
 				<img src={logo} alt="grid gallery maker" />
 			</a>
 		</Header>
